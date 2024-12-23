@@ -296,7 +296,7 @@ return {
           previewer = false,
           prompt_prefix = " " .. icons.ui.Telescope .. " ",
           selection_caret = icons.ui.BoldArrowRight .. " ",
-          file_ignore_patterns = { "node_modules", "package-lock.json" },
+          file_ignore_patterns = { "node_modules", "package-lock.json" }, 
           initial_mode = "insert",
           select_strategy = "reset",
           sorting_strategy = "ascending",

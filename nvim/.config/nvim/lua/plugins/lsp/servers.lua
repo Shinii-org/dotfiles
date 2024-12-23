@@ -45,19 +45,10 @@ return {
     cmd = { "yaml-language-server", "--stdio" },
     filetypes = { "yaml" },
   },
-  tailwindcss = {
-    experimental = {
-      classRegex = {
-        "cn`([^`]*)",
-        "cn\\(([^)]*)",
-        "tw`([^`]*)",
-        "tw\\(([^)]*)",
-        'className="([^"]*)',
-      },
-    },
-  },
+
   zls = {},
   clangd = {},
   marksman = {},
+  tailwindcss={},
   -- "markdownlint-cli2", "markdown-toc"
 }

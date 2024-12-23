@@ -1,28 +1,22 @@
 -- https://github.com/yetone/avante.nvim
-
---
 return {
   "yetone/avante.nvim",
+  enabled = false,
   event = "VeryLazy",
   lazy = false,
-  -- set this if you want to always pull the latest change
   opts = {
-    provider="openai",
-    openai= {
-      model="gpt-4o"
-    }
     -- add any opts here
+    provider = "copilot",
   },
-  -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
-  build = "make",
-  -- build = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" -- for windows
+  -- if you want to download pre-built binary, then pass source=false. Make sure to follow instruction above.
+  -- Also note that downloading prebuilt binary is a lot faster comparing to compiling from source.
+  build = ":AvanteBuild source=false",
   dependencies = {
     "stevearc/dressing.nvim",
     "nvim-lua/plenary.nvim",
     "MunifTanjim/nui.nvim",
     --- The below dependencies are optional,
-    "hrsh7th/nvim-cmp", -- autocompletion for avante commands and mentions
-    "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
+    "echasnovski/mini.icons",
     "zbirenbaum/copilot.lua", -- for providers='copilot'
     {
       -- support for image pasting
@@ -43,7 +37,7 @@ return {
     },
     {
       -- Make sure to set this up properly if you have lazy=true
-      'MeanderingProgrammer/render-markdown.nvim',
+      "MeanderingProgrammer/render-markdown.nvim",
       opts = {
         file_types = { "markdown", "Avante" },
       },

@@ -3,7 +3,6 @@ return {
   "hrsh7th/nvim-cmp",
   event = "InsertEnter",
   dependencies = {
-    { "roobert/tailwindcss-colorizer-cmp.nvim", config = true },
     -- Snippet Engine & its associated nvim-cmp source
     "L3MON4D3/LuaSnip",
     "saadparwaiz1/cmp_luasnip",
@@ -17,8 +16,11 @@ return {
 
     -- Adds vscode-like pictograms
     "onsails/lspkind.nvim",
+
+    -- tailwindcss
+    "roobert/tailwindcss-colorizer-cmp.nvim"
   },
-  opts = function()
+  config = function()
     local cmp = require("cmp")
     local luasnip = require("luasnip")
     -- local lspkind = require("lspkind")

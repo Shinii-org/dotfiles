@@ -24,7 +24,6 @@ return {
           "c",
           "html",
           "javascript",
-          "css",
           "json",
           "lua",
           "luadoc",
