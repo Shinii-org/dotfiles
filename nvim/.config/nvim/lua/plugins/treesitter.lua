@@ -3,7 +3,7 @@ return {
   version = false, -- last release is way too old and doesn't work on Windows
   build = ":TSUpdate",
   event = { "LazyFile", "VeryLazy" },
-  lazy = vim1.fn.argc(-1) == 0, -- load treesitter early when opening a file from the cmdline
+  lazy = vim.fn.argc(-1) == 0, -- load treesitter early when opening a file from the cmdline
   init = function(plugin)
     -- PERF: add nvim-treesitter queries to the rtp and it's custom query predicates early
     -- This is needed because a bunch of plugins no longer `require("nvim-treesitter")`, which
@@ -33,11 +33,11 @@ return {
         for name, fn in pairs(move) do
           if name:find("goto") == 1 then
             move[name] = function(q, ...)
-              if vim1.wo.diff then
+              if vim.wo.diff then
                 local config = configs.get_module("textobjects.move")[name] ---@type table<string,string>
                 for key, query in pairs(config or {}) do
                   if q == query and key:find("[%]%[][cC]") then
-                    vim1.cmd("normal! " .. key)
+                    vim.cmd("normal! " .. key)
                     return
                   end
                 end

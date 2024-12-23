@@ -3,6 +3,13 @@ return {
     "catppuccin/nvim",
     priority = 150,
     name = "catppuccin",
+    opts = {
+      transparent = true,
+      styles = {
+        floats = "transparent",
+        sidebars = "transparent"
+      }
+    },
     config = function()
       require("catppuccin").setup({
         background = {
@@ -366,6 +373,17 @@ return {
       -- vim.cmd("colorscheme carbon")
     end,
   },
+  {
+  "folke/tokyonight.nvim",
+  name="tokyonight",
+  opts = {
+    transparent = true,
+    styles = {
+      sidebars = "transparent",
+      floats = "transparent",
+    },
+  },
+},
    {
         "ellisonleao/gruvbox.nvim",
         name = "gruvbox",
@@ -396,25 +414,31 @@ return {
             })
         end,
     },
-  {
-    "sainnhe/gruvbox-material",
-    enabled = true,
-    priority = 1000,
-    config = function()
-      vim.g.gruvbox_material_transparent_background = 0
-      vim.g.gruvbox_material_foreground = "mix"
-      vim.g.gruvbox_material_background = "hard"
-      vim.g.gruvbox_material_ui_contrast = "high"
-      vim.g.gruvbox_material_float_style = "bright"
-      vim.g.gruvbox_material_statusline_style = "material"
-      vim.g.gruvbox_material_cursor = "auto"
-
-      -- vim.g.gruvbox_material_colors_override = { bg0 = '#16181A' } -- #0e1010
-      -- vim.g.gruvbox_material_better_performance = 1
-
-      vim.cmd.colorscheme("gruvbox-material")
-    end,
-  },
+  -- {
+  --   "sainnhe/gruvbox-material",
+  --   lazy = false,
+  --   enabled = true,
+  --   cache = true,
+  --   name = "gruvbox-material",
+  --   priority = 1000,
+  --   config = function()
+  --     vim.o.gruvbox_material_transparent_background = 0
+  --     vim.o.gruvbox_material_foreground = "original"
+  --     vim.o.gruvbox_material_background = "soft"
+  --     vim.o.gruvbox_material_ui_contrast = "low"
+  --     vim.o.gruvbox_material_float_style = "bright"
+  --     vim.o.gruvbox_material_statusline_style = "original"
+  --     vim.o.gruvbox_material_cursor = "orange"
+  --     vim.o.gruvbox_material_enable_italic = 1
+  --     vim.o.gruvbox_material_disable_terminal_colors = 1
+  --     vim.o.gruvbox_material_lightline_disable_bold = 1
+  --
+  --     -- vim.g.gruvbox_material_colors_override = { bg0 = '#16181A' } -- #0e1010
+  --     -- vim.g.gruvbox_material_better_performance = 1
+  --
+  --     vim.api.nvim_command("colorscheme gruvbox-material")
+  --   end,
+  -- },
 
   { "bluz71/vim-moonfly-colors", name = "moonfly", lazy = false, priority = 1000 },
   { "bluz71/vim-nightfly-colors", name = "nightfly", lazy = false, priority = 1000 },
@@ -464,23 +488,23 @@ return {
       -- vim.cmd.colorscheme("vesper")
     end,
   },
-  {
-    "scottmckendry/cyberdream.nvim",
-    lazy = false,
-    priority = 1000,
-    config = function()
-      require("cyberdream").setup({
-        transparent = true,
-        italic_comments = false,
-        hide_fillchars = false,
-        borderless_telescope = true,
-        terminal_colors = true,
-        cache = true,
-
-        -- vim.api.nvim_command("colorscheme cyberdream")
-      })
-    end,
-  },
+  -- {
+  --   "scottmckendry/cyberdream.nvim",
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function()
+  --     require("cyberdream").setup({
+  --       transparent = true,
+  --       italic_comments = false,
+  --       hide_fillchars = false,
+  --       borderless_telescope = true,
+  --       terminal_colors = true,
+  --       cache = true,
+  --
+  --       -- vim.api.nvim_command("colorscheme cyberdream")
+  --     })
+  --   end,
+  -- },
   {
     "wtfox/jellybeans.nvim",
     priority = 1000,
